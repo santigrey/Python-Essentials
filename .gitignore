@@ -219,3 +219,9 @@ __marimo__/
 
 # Local instructor scratch files (not course material)
 /Notes
+
+# macOS
+.DS_Store
+
+# Separate git repo with its own remote (santigrey/website-project)
+/website-project/
