@@ -228,3 +228,6 @@ __marimo__/
 # leading-slash pattern would never match them.
 website-project/
 version-control-simulation-jamessloan/
+
+# Section quiz scratch files (they contain intentionally invalid code)
+*-Section-quiz.py
