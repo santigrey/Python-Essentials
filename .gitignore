@@ -223,5 +223,8 @@ __marimo__/
 # macOS
 .DS_Store
 
-# Separate git repo with its own remote (santigrey/website-project)
-/website-project/
+# Nested repos with their own remotes. Patterns are deliberately unanchored:
+# these live under modules/Module 302/, not at the repository root, so a
+# leading-slash pattern would never match them.
+website-project/
+version-control-simulation-jamessloan/
