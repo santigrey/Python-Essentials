@@ -26,6 +26,10 @@ Repository: https://github.com/santigrey/Python-Essentials — `modules/Module 3
 ```python
 # ALAB 351.2 - Part 1: Data Types, Variables, and Operators
 # James Sloan
+#
+# Purpose: declare variables of three different data types, use them in an
+# introduction sentence, calculate a future age and a rectangle area, and
+# demonstrate arithmetic and string operators.
 
 # ---------------------------------------------------------------------------
 # Section 1: Variable declarations
@@ -54,7 +58,7 @@ print()
 # ---------------------------------------------------------------------------
 print("Section 2: Introduction")
 print("-----------------------")
-print(f"Hi, my name is {name}. I am {age} years old and {height:.2f} meters tall.")
+print(f"Hello, my name is {name}. I am {age} years old and {height:.2f} meters tall.")
 print()
 
 # ---------------------------------------------------------------------------
@@ -65,20 +69,22 @@ print("Section 3: Age in five years")
 print("----------------------------")
 years_ahead = 5
 future_age = age + years_ahead          # addition
-print(f"In {years_ahead} years I will be {future_age} years old.")
+print(f"In {years_ahead} years, I will be {future_age} years old.")
 print()
 
 # ---------------------------------------------------------------------------
-# Section 4: Area of a rectangle (5.5 x 2)
-# The * operator multiplies. length is a float and width is an int, so Python
-# promotes the result to a float automatically.
+# Section 4: Area of a rectangle (width 5.5, height 2)
+# The * operator multiplies. rect_width is a float and rect_height is an int,
+# so Python promotes the result to a float automatically.
+# The rectangle's measurements are named rect_width and rect_height so they do
+# not overwrite the personal `height` variable declared in Section 1.
 # ---------------------------------------------------------------------------
 print("Section 4: Rectangle area")
 print("-------------------------")
-length = 5.5        # float
-width = 2           # int
-area = length * width                   # multiplication
-print(f"A rectangle {length} x {width} has an area of {area:.2f} square units.")
+rect_width = 5.5        # float
+rect_height = 2         # int
+area = rect_width * rect_height         # multiplication
+print(f"The area of a {rect_width} x {rect_height} rectangle is {area}.")
 print()
 
 # ---------------------------------------------------------------------------
@@ -127,15 +133,15 @@ height = 1.83    -> float
 
 Section 2: Introduction
 -----------------------
-Hi, my name is James. I am 41 years old and 1.83 meters tall.
+Hello, my name is James. I am 41 years old and 1.83 meters tall.
 
 Section 3: Age in five years
 ----------------------------
-In 5 years I will be 46 years old.
+In 5 years, I will be 46 years old.
 
 Section 4: Rectangle area
 -------------------------
-A rectangle 5.5 x 2 has an area of 11.00 square units.
+The area of a 5.5 x 2 rectangle is 11.0.
 
 Section 5: Operators
 --------------------
@@ -157,9 +163,9 @@ len("James Sloan") = 11
 | Requirement | Where it is met |
 | --- | --- |
 | Variables for name (string), age (integer), height (float in meters) | Section 1 — `name`, `age`, `height`, each labeled with its type |
-| Introduction sentence using those variables | Section 2 — one f-string with all three |
-| Age in 5 years, with a printed statement | Section 3 — `age + years_ahead` |
-| Area of a 5.5 × 2 rectangle, formatted output | Section 4 — `length * width`, printed as `11.00` with `:.2f` |
+| Introduction sentence using those variables, not hardcoded values | Section 2 — one f-string with all three variables |
+| Age in 5 years, with a printed statement | Section 3 — `age + years_ahead`, printed as `In 5 years, I will be 46 years old.` |
+| Area of a rectangle with width 5.5 and height 2, formatted output | Section 4 — `rect_width * rect_height`, printed as `The area of a 5.5 x 2 rectangle is 11.0.` |
 | At least two arithmetic operators and one string operation | Section 5 — seven arithmetic operators (`+ - * / // % **`) and four string operations (`+`, `*`, `.upper()`, `len()`) |
 | Comments explaining each section | Every section opens with a comment block; individual operators are annotated inline |
 
@@ -491,24 +497,3 @@ operands are whole numbers (`4 / 2` is `2.0`), which is why `//` exists for
 whole-number division; and `word[::-1]` reverses a string using slice notation
 with a step of `-1`.
 
----
-
-## Rubric Self-Check
-
-**Total: 40 points, plus 4 bonus.**
-
-| File | Criteria | Points | Where it is addressed |
-| --- | --- | ---: | --- |
-| `types_and_vars.py` | Variable declarations and usage | 4 | Section 1 declares a `str`, an `int`, and a `float`; all three are reused in Sections 2–5 |
-| `types_and_vars.py` | Output format correctness | 2 | `:.2f` on height and area; each section has a labeled heading |
-| `types_and_vars.py` | Code clarity | 2 | One section per requirement, named variables, consistent layout |
-| `types_and_vars.py` | Future age calculation | 2 | Section 3 |
-| `types_and_vars.py` | Rectangle area calculation | 2 | Section 4 — 5.5 × 2 printed as `11.00` |
-| `types_and_vars.py` | Operator variety | 4 | Seven arithmetic operators and four string operations in Section 5 |
-| `types_and_vars.py` | Comments and readability | 4 | Comment block per section plus inline notes on each operator |
-| `simple_calculator.py` | Functionality (all operations) | 9 | All four operations shown working in the sample runs |
-| `simple_calculator.py` | Input handling and validation | 5 | Non-numeric input, unknown operator, and division by zero all handled |
-| `simple_calculator.py` | User-friendly output | 3 | `7 * 3 = 21` format; whole numbers print without `.0` |
-| `simple_calculator.py` | Code quality and structure | 3 | Five numbered steps, if/elif/else chain, comments throughout |
-| `string_fun.py` | String operations (bonus) | 2 | Length, uppercase, repetition, plus lowercase, title case, indexing, slicing |
-| `string_fun.py` | Correctness and creativity (bonus) | 2 | Palindrome check, first/last character, and an empty-input fallback |

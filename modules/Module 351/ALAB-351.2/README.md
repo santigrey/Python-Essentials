@@ -42,15 +42,15 @@ height = 1.83    -> float
 
 Section 2: Introduction
 -----------------------
-Hi, my name is James. I am 41 years old and 1.83 meters tall.
+Hello, my name is James. I am 41 years old and 1.83 meters tall.
 
 Section 3: Age in five years
 ----------------------------
-In 5 years I will be 46 years old.
+In 5 years, I will be 46 years old.
 
 Section 4: Rectangle area
 -------------------------
-A rectangle 5.5 x 2 has an area of 11.00 square units.
+The area of a 5.5 x 2 rectangle is 11.0.
 
 Section 5: Operators
 --------------------

@@ -1,5 +1,9 @@
 # ALAB 351.2 - Part 1: Data Types, Variables, and Operators
 # James Sloan
+#
+# Purpose: declare variables of three different data types, use them in an
+# introduction sentence, calculate a future age and a rectangle area, and
+# demonstrate arithmetic and string operators.
 
 # ---------------------------------------------------------------------------
 # Section 1: Variable declarations
@@ -28,7 +32,7 @@ print()
 # ---------------------------------------------------------------------------
 print("Section 2: Introduction")
 print("-----------------------")
-print(f"Hi, my name is {name}. I am {age} years old and {height:.2f} meters tall.")
+print(f"Hello, my name is {name}. I am {age} years old and {height:.2f} meters tall.")
 print()
 
 # ---------------------------------------------------------------------------
@@ -39,20 +43,22 @@ print("Section 3: Age in five years")
 print("----------------------------")
 years_ahead = 5
 future_age = age + years_ahead          # addition
-print(f"In {years_ahead} years I will be {future_age} years old.")
+print(f"In {years_ahead} years, I will be {future_age} years old.")
 print()
 
 # ---------------------------------------------------------------------------
-# Section 4: Area of a rectangle (5.5 x 2)
-# The * operator multiplies. length is a float and width is an int, so Python
-# promotes the result to a float automatically.
+# Section 4: Area of a rectangle (width 5.5, height 2)
+# The * operator multiplies. rect_width is a float and rect_height is an int,
+# so Python promotes the result to a float automatically.
+# The rectangle's measurements are named rect_width and rect_height so they do
+# not overwrite the personal `height` variable declared in Section 1.
 # ---------------------------------------------------------------------------
 print("Section 4: Rectangle area")
 print("-------------------------")
-length = 5.5        # float
-width = 2           # int
-area = length * width                   # multiplication
-print(f"A rectangle {length} x {width} has an area of {area:.2f} square units.")
+rect_width = 5.5        # float
+rect_height = 2         # int
+area = rect_width * rect_height         # multiplication
+print(f"The area of a {rect_width} x {rect_height} rectangle is {area}.")
 print()
 
 # ---------------------------------------------------------------------------
