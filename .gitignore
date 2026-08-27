@@ -232,9 +232,9 @@ version-control-simulation-jamessloan/
 # Section quiz scratch files (they contain intentionally invalid code)
 *-Section-quiz.py
 
-# Instructor-only study material. This repo is public and holds ONLY required
-# assignment deliverables (ALABs, plus reflections that are part of the
-# assignment itself) — nothing else.
+# Instructor-only study material. This repo is public and holds ONLY graded or
+# assigned coursework — ALABs, NetAcad course projects, and reflections that are
+# part of the assignment itself. Personal study aids stay out.
 /Test Prep/
 *-Speaking-Reference.md
 *-Speaking-Reference.pdf
