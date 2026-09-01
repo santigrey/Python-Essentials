@@ -3,11 +3,12 @@
 Console output copied from real runs of `SBA-351.py` (Python 3). Everything
 after a prompt on the same line is what was typed at the keyboard.
 
-## Session 1 - add, duplicate, view, search, delete, invalid input, exit
+## Session 1 - add, duplicates, view, search, delete, invalid input, exit
 
-Covers: adding two contacts, a rejected duplicate, a rejected phone number,
-viewing the list, a successful search, an unsuccessful search, a deletion, two
-invalid menu choices, and a clean exit.
+Covers: adding two contacts, a rejected exact duplicate, a rejected duplicate
+typed in different capitalization, a rejected blank name, a rejected phone
+number, viewing the list, a successful search, an unsuccessful search, a
+deletion, two invalid menu choices, and a clean exit.
 
 ```
 
@@ -50,10 +51,30 @@ Contact Book Menu:
 4. Delete Contact
 5. Exit
 Enter your choice (1-5): 1
+Enter the contact's name: alice johnson
+Alice Johnson is already in the contact book. Nothing was changed.
+
+Contact Book Menu:
+1. Add New Contact
+2. View All Contacts
+3. Search Contact
+4. Delete Contact
+5. Exit
+Enter your choice (1-5): 1
+Enter the contact's name: 
+The name cannot be blank. Nothing was added.
+
+Contact Book Menu:
+1. Add New Contact
+2. View All Contacts
+3. Search Contact
+4. Delete Contact
+5. Exit
+Enter your choice (1-5): 1
 Enter the contact's name: Carol Diaz
 Enter the phone number (digits only): 555-1234
 '555-1234' is not a valid phone number.
-Use digits only, between 7 and 15 of them. Nothing was added.
+Use digits only, 7 to 15 of them. Nothing was added.
 
 Contact Book Menu:
 1. Add New Contact
@@ -94,7 +115,7 @@ Contact Book Menu:
 4. Delete Contact
 5. Exit
 Enter your choice (1-5): 4
-Enter the name of the contact to delete: Bob Smith
+Enter the name of the contact to delete: bob smith
 Bob Smith was deleted from the contact book.
 
 Contact Book Menu:

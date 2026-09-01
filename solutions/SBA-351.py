@@ -18,12 +18,60 @@ MIN_PHONE_DIGITS = 7
 MAX_PHONE_DIGITS = 15
 
 
+# ---------------------------------------------------------------------------
+# Small helper functions. Each one returns a value so the feature functions
+# below can stay short and none of the same logic gets written twice.
+# ---------------------------------------------------------------------------
+
 def is_valid_phone(number):
     """Return True only for a digits-only number of a reasonable length."""
     if not number.isdigit():
         return False
     return MIN_PHONE_DIGITS <= len(number) <= MAX_PHONE_DIGITS
 
+
+def find_existing_name(contacts, name):
+    """Return the stored spelling of a name, ignoring case, or None if unused.
+
+    Looking the name up this way means "bob smith" and "Bob Smith" are treated
+    as the same person, so the same contact cannot be stored twice.
+    """
+    for existing_name in contacts:
+        if existing_name.lower() == name.lower():
+            return existing_name
+    return None
+
+
+def find_matches(contacts, term):
+    """Return a dictionary of the contacts whose name contains term.
+
+    Lowercasing both sides makes the search ignore capitalization, and the "in"
+    operator matches a partial name as well as an exact one.
+    """
+    matches = {}
+    for name in sorted(contacts):
+        if term.lower() in name.lower():
+            matches[name] = contacts[name]
+    return matches
+
+
+def contact_list_is_empty(contacts):
+    """Print a message and return True when no contacts are stored yet."""
+    # An empty dictionary is falsy, so this catches the "no contacts yet" case.
+    if not contacts:
+        print("The contact list is empty.")
+        return True
+    return False
+
+
+def print_contact(name, phone):
+    """Print one contact in the standard name/number format."""
+    print(f"{name}: {phone}")
+
+
+# ---------------------------------------------------------------------------
+# The four menu features. Each takes the contacts dictionary as a parameter.
+# ---------------------------------------------------------------------------
 
 def add_contact(contacts):
     """Add one new name and number to the dictionary."""
@@ -35,39 +83,37 @@ def add_contact(contacts):
 
     # Assigning to a key that already exists would silently overwrite the old
     # number, so the duplicate is turned away before that can happen.
-    if name in contacts:
-        print(name + " is already in the contact book. Nothing was changed.")
+    existing_name = find_existing_name(contacts, name)
+    if existing_name is not None:
+        print(f"{existing_name} is already in the contact book. Nothing was changed.")
         return
 
     phone = input("Enter the phone number (digits only): ").strip()
 
     if not is_valid_phone(phone):
-        print("'" + phone + "' is not a valid phone number.")
-        print("Use digits only, between " + str(MIN_PHONE_DIGITS) + " and "
-              + str(MAX_PHONE_DIGITS) + " of them. Nothing was added.")
+        print(f"'{phone}' is not a valid phone number.")
+        print(f"Use digits only, {MIN_PHONE_DIGITS} to {MAX_PHONE_DIGITS} of them."
+              " Nothing was added.")
         return
 
     contacts[name] = phone
-    print(name + " was added to the contact book.")
+    print(f"{name} was added to the contact book.")
 
 
 def view_contacts(contacts):
     """Print every contact in the dictionary."""
-    # An empty dictionary is falsy, so this catches the "no contacts yet" case.
-    if not contacts:
-        print("The contact list is empty.")
+    if contact_list_is_empty(contacts):
         return
 
     print("All Contacts:")
     # Optional enhancement: sorted() lists the names alphabetically.
     for name in sorted(contacts):
-        print(name + ": " + contacts[name])
+        print_contact(name, contacts[name])
 
 
 def search_contact(contacts):
-    """Find contacts whose name contains the text the user typed."""
-    if not contacts:
-        print("The contact list is empty.")
+    """Find and print the contacts whose name contains the text the user typed."""
+    if contact_list_is_empty(contacts):
         return
 
     term = input("Enter a full or partial name to search for: ").strip()
@@ -76,32 +122,36 @@ def search_contact(contacts):
         print("Please enter something to search for.")
         return
 
-    # Lowercasing both sides makes the search ignore capitalization, and "in"
-    # matches a partial name as well as an exact one.
-    matches = {}
-    for name in sorted(contacts):
-        if term.lower() in name.lower():
-            matches[name] = contacts[name]
+    matches = find_matches(contacts, term)
 
     if not matches:
-        print("No contact matching '" + term + "' was found.")
+        print(f"No contact matching '{term}' was found.")
         return
 
-    print("Found " + str(len(matches)) + " matching contact(s):")
+    print(f"Found {len(matches)} matching contact(s):")
     for name in matches:
-        print(name + ": " + matches[name])
+        print_contact(name, matches[name])
 
 
 def delete_contact(contacts):
-    """Remove a contact from the dictionary by its exact name."""
+    """Remove a contact from the dictionary by name."""
     name = input("Enter the name of the contact to delete: ").strip()
 
-    if name in contacts:
-        del contacts[name]
-        print(name + " was deleted from the contact book.")
-    else:
-        print(name + " does not exist in the contact book.")
+    # find_existing_name lets the user delete a contact without having to match
+    # the capitalization they originally typed.
+    existing_name = find_existing_name(contacts, name)
 
+    if existing_name is None:
+        print(f"{name} does not exist in the contact book.")
+        return
+
+    del contacts[existing_name]
+    print(f"{existing_name} was deleted from the contact book.")
+
+
+# ---------------------------------------------------------------------------
+# The menu itself.
+# ---------------------------------------------------------------------------
 
 def show_menu():
     """Print the menu options."""
