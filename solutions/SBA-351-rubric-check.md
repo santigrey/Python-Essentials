@@ -1,8 +1,7 @@
 # SBA 351 - Contact Book: Rubric Check
 
 Each rubric line mapped to where it is satisfied in `SBA-351.py`, with the
-evidence in `SBA-351-interaction-log.md`. Line numbers refer to the committed
-version of the script.
+evidence in `SBA-351-interaction-log.md`.
 
 ## Functionality - 55 pts
 
