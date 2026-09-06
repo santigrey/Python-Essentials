@@ -21,7 +21,7 @@ error handling, and a custom exception raised by an age validator.
 ## How to run
 
 ```bash
-cd "modules/Module 356/ALAB-356.2"
+cd "modules/Module 356/ALAB 356.2"
 python3 string_manipulation.py
 python3 list_manager.py
 python3 age_validator.py
