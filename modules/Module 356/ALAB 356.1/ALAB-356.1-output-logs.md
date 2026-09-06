@@ -156,6 +156,27 @@ the script exits.
 
 ---
 
+## Screenshots
+
+The same three scripts captured running in Terminal, saved alongside this file:
+
+| File | Shows |
+| --- | --- |
+| `screenshot-1-builtin_usage.png` | Three consecutive runs — 51 → 7, 48 → 6, 73 → 8 — with the command line visible each time |
+| `screenshot-2-use_utilities.png` | `greet()` and `factorial()` called through the package import |
+| `screenshot-3-external_package.png` | colorama printing in actual green, red, cyan, and bright yellow |
+
+Checking the first screenshot by hand: √51 ≈ 7.14 floored to 7, √48 ≈ 6.93 floored
+to 6, √73 ≈ 8.54 floored to 8. All three correct.
+
+One thing to note in the colorama screenshot: the last line, "Back to the normal
+terminal color," also appears green. That is not colorama still colouring it — it
+is this Terminal profile's own default text colour, which happens to be green.
+That line is the proof `init(autoreset=True)` worked: the colour returned to the
+terminal default instead of staying yellow.
+
+---
+
 ## Summary
 
 | Script | Result | Exit status |
