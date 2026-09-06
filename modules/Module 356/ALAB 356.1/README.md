@@ -16,6 +16,7 @@ package, and a third-party package installed with PIP.
 | `mypackage/utilities.py` | Task 2 — the custom module; defines `greet(name)` and `factorial(n)`. |
 | `use_utilities.py` | Task 2 — imports the module with `from mypackage import utilities` and prints the result of both functions. |
 | `external_package.py` | Task 3 — uses the third-party `colorama` package to print colored text. |
+| `ALAB-356.1-output-logs.md` | Captured text logs of every script running, including proof the colorama color codes are real. |
 
 ## How to run
 
