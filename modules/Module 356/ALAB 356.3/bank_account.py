@@ -19,6 +19,7 @@ class BankAccount:
         if amount > self.balance:
             raise ValueError("Insufficient funds for this withdrawal.")
         self.balance -= amount
+        return self.balance
 
     def __str__(self):
         return f"Account {self.account_number} ({self.owner}): ${self.balance:.2f}"
