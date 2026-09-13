@@ -71,8 +71,8 @@ diary.txt did not exist - created it.
 Enter a diary entry (blank to stop): Started the OOP lab today, feeling good about inheritance.
 ...
 --- diary.txt contents ---
-[2026-09-13 08:35:20] Started the OOP lab today, feeling good about inheritance.
-[2026-09-13 08:35:20] Finished the SavingsAccount subclass, moving on to generators next.
+[2026-09-13 08:45:50] Started the OOP lab today, feeling good about inheritance.
+[2026-09-13 08:45:50] Finished the SavingsAccount subclass, moving on to generators next.
 ```
 
 ```
@@ -80,9 +80,9 @@ diary.txt already exists.
 Enter a diary entry (blank to stop): Second run - confirming append works and the old entries are still here.
 ...
 --- diary.txt contents ---
-[2026-09-13 08:35:20] Started the OOP lab today, feeling good about inheritance.
-[2026-09-13 08:35:20] Finished the SavingsAccount subclass, moving on to generators next.
-[2026-09-13 08:36:07] Second run - confirming append works and the old entries are still here.
+[2026-09-13 08:45:50] Started the OOP lab today, feeling good about inheritance.
+[2026-09-13 08:45:50] Finished the SavingsAccount subclass, moving on to generators next.
+[2026-09-13 08:46:09] Second run - confirming append works and the old entries are still here.
 ```
 
 The second run's new entry lands after the first two — appending, not

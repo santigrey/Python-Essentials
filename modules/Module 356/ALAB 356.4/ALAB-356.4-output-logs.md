@@ -50,8 +50,8 @@ Enter a diary entry (blank to stop): Finished the SavingsAccount subclass, movin
 Enter a diary entry (blank to stop):
 
 --- diary.txt contents ---
-[2026-09-13 08:35:20] Started the OOP lab today, feeling good about inheritance.
-[2026-09-13 08:35:20] Finished the SavingsAccount subclass, moving on to generators next.
+[2026-09-13 08:45:50] Started the OOP lab today, feeling good about inheritance.
+[2026-09-13 08:45:50] Finished the SavingsAccount subclass, moving on to generators next.
 ```
 
 **Run 2 — file already exists, new entry appends below the old ones:**
@@ -63,9 +63,9 @@ Enter a diary entry (blank to stop): Second run - confirming append works and th
 Enter a diary entry (blank to stop):
 
 --- diary.txt contents ---
-[2026-09-13 08:35:20] Started the OOP lab today, feeling good about inheritance.
-[2026-09-13 08:35:20] Finished the SavingsAccount subclass, moving on to generators next.
-[2026-09-13 08:36:07] Second run - confirming append works and the old entries are still here.
+[2026-09-13 08:45:50] Started the OOP lab today, feeling good about inheritance.
+[2026-09-13 08:45:50] Finished the SavingsAccount subclass, moving on to generators next.
+[2026-09-13 08:46:09] Second run - confirming append works and the old entries are still here.
 ```
 
 Both entries from run 1 are still there in run 2 — `open(DIARY_FILE, "a")`
